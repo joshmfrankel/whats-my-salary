@@ -10,3 +10,5 @@ accounts-password
 iron:router
 sanjo:jasmine
 velocity:html-reporter
+insecure
+autopublish

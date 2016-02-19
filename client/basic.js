@@ -17,6 +17,8 @@ Template.body.helpers({
   }
 });
 
+
+
 Template.body.events({
   "submit .new-task": function (event) {
     // Prevent default browser form submit
@@ -37,24 +39,24 @@ Template.body.events({
   }
 });
 
-Template.task_template.helpers({
-  isOwner: function () {
-    return this.owner === Meteor.userId();
-  }
-});
+// Template.task_template.helpers({
+//   isOwner: function () {
+//     return this.owner === Meteor.userId();
+//   }
+// });
 
-Template.task_template.events({
-  "click .toggle-checked": function () {
-    // Set the checked property to the opposite of its current value
-    Meteor.call("setChecked", this._id, ! this.checked);
-  },
-  "click .delete": function () {
-    Meteor.call("deleteTask", this._id);
-  },
-  "click .toggle-private": function () {
-    Meteor.call("setPrivate", this._id, ! this.private);
-  }
-});
+// Template.task_template.events({
+//   "click .toggle-checked": function () {
+//     // Set the checked property to the opposite of its current value
+//     Meteor.call("setChecked", this._id, ! this.checked);
+//   },
+//   "click .delete": function () {
+//     Meteor.call("deleteTask", this._id);
+//   },
+//   "click .toggle-private": function () {
+//     Meteor.call("setPrivate", this._id, ! this.private);
+//   }
+// });
 
 Accounts.ui.config({
   passwordSignupFields: "USERNAME_ONLY"
